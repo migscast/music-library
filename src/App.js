@@ -35,23 +35,24 @@ const App = () => {
   }
 
   return (
-      <div>
-         {message}
-         <Router>
+    <div>
+    
+        <Router>
             <Routes>
                 <Route path="/" element={
-                    <Fragment>
-                        <SearchBar handleSearch={handleSearch} /> 
+                    <fragment>
+                        <SearchBar handleSearch = {handleSearch}/>
+                        {message}
                         <Gallery data={data} />
-                    </Fragment>
+                    </fragment>
                 } />
                 <Route path="/album/:id" element={<AlbumView />} />
                 <Route path="/artist/:id" element={<ArtistView />} />
             </Routes>
-         </Router>
+        </Router>
+    </div>
+)
 
-      </div>
-  )
 }
 
 export default App
